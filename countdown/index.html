@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible"/>
+  <meta name="description" content="A new Flutter Sproject."/>
+
+  <!-- Add this meta tag for using Google Sign In -->
+  <meta
+          name="google-signin-client_id"
+          content="18389996782-lja7plf6hcpva5tc06sle8h80718cel9.apps.googleusercontent.com"
+  />
+
+  <!-- iOS meta tags & icons -->
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+  <meta name="apple-mobile-web-app-title" content="Đếm"/>
+  <link rel="apple-touch-icon" href="icons/Icon 192.png"/>
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/png" href="Icon 16.png"/>
+
+  <title>Đếm</title>
+  <link rel="manifest" href="manifest.json"/>
+</head>
+<body>
+
+<!-- This script installs service_worker.js to provide PWA functionality to
+   application. For more information, see:
+   https://developers.google.com/web/fundamentals/primers/service-workers -->
+<script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", function () {
+          navigator.serviceWorker.register("flutter_service_worker.js");
+        });
+      }
+
+</script>
+<!-- The core Firebase JS SDK (always required for using any firebase service) -->
+<script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
+<!-- Firebase Auth SDK -->
+<script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-auth.js"></script>
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyD34thHU2_ChKHiZ3cQb3Wg1W7hV69Ww3g",
+    authDomain: "smling-6ffd3.firebaseapp.com",
+    databaseURL: "https://smling-6ffd3.firebaseio.com",
+    projectId: "smling-6ffd3",
+    storageBucket: "smling-6ffd3.appspot.com",
+    messagingSenderId: "18389996782",
+    appId: "1:18389996782:web:a27fbaa51ea751594fcfff",
+    measurementId: "G-7TYCR9M765"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+
+</script>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '851737475629924',
+      xfbml      : true,
+      version    : 'v10.0'
+    });
+    FB.AppEvents.logPageView();
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+<script src="flutter_facebook_auth.js" type="application/javascript" ></script>
+<script src="main.dart.js" type="application/javascript"></script>
+</body>
+</html>
